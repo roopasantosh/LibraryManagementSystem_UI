@@ -11764,3 +11764,11 @@ right connector from last child*/
     text-overflow: ellipsis !important;
     max-width: 70vw;
 }
+
+.hist ul li {
+    list-style: none;    
+}
+
+.hist ul li:odd {
+    background-color: #CECECE;   
+}

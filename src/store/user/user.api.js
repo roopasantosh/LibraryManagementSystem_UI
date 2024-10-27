@@ -5,11 +5,6 @@ require("dotenv").config();
 const headerInfo = {};
 
 class UserAPI {
-  static async RegisterUser(req) {
-    let url = process.env.REACT_APP_API_URL + "/member";
-    return HttpHelper.httpRequest(url, "POST", headerInfo, req);
-  }
-
   static async GetCurrentUser() {
     const user = decodeToken();
     let url =
@@ -58,6 +53,11 @@ class UserAPI {
     let url =
       process.env.REACT_APP_API_URL + "/api/Library/GetBookTransactions";
     return HttpHelper.httpRequest(url, "GET", headerInfo);
+  }
+
+  static async RegisterUser(req) {
+    let url = process.env.REACT_APP_API_URL + "/api/Library/createUser";
+    return HttpHelper.httpRequest(url, "POST", headerInfo, req);
   }
 }
 

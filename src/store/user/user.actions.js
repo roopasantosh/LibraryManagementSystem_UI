@@ -1,7 +1,7 @@
 import { action } from "typesafe-actions";
 import { UserActionTypes } from "./user.model";
 
-const registerUserRequest = (req) =>
+export const registerUserRequest = (req) =>
   action(UserActionTypes.REGISTER_USER_REQUEST, req);
 export const registerUserSuccess = (res) =>
   action(UserActionTypes.REGISTER_USER_SUCCESS, res);

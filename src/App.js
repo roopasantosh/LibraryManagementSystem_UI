@@ -8,6 +8,7 @@ import LoginContainer from "./pages/login/Login.Container";
 import theme from "./theme";
 import ProfileContainer from "./pages/profile/Profile.Container";
 import TransContainer from "./pages/transaction/Transaction.Container";
+import SignupContainer from "./pages/signup/Signup.Container";
 
 export default function App() {
   return (
@@ -15,6 +16,14 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/login" element={<LoginContainer />} />
+          <Route
+            path="/signup"
+            element={
+              <ProtectedRoute>
+                <SignupContainer />
+              </ProtectedRoute>
+            }
+          ></Route>
           <Route
             path="/"
             element={

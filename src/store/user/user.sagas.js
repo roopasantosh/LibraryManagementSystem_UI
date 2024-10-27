@@ -10,10 +10,7 @@ function* handleRegisterUser(action) {
     yield put(UserActions.registerUserSuccess(response));
     Swal.fire({
       title: "Registration successful",
-      text:
-        "Your Member ID is " +
-        response.memberId +
-        ".Please login to your account now",
+
       icon: "success",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
@@ -25,10 +22,6 @@ function* handleRegisterUser(action) {
         confirmButton: "order-2",
         denyButton: "order-3",
       },
-    }).then((x) => {
-      if (x.isDismissed) {
-        document.location.href = "/login";
-      }
     });
   } catch (e) {
     yield put(UserActions.registerUserFailure(e));
